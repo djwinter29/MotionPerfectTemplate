@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Contents>
+  <Content Name="Project">
+    <Project>
+      <Groups>
+        <Group Name="Simulation" Type="Group" GroupId="e692c7e3-4b20-42fd-81c1-88e2d80c1b86" />
+        <Group Name="Example" Type="Group" GroupId="10baf34d-e33b-497f-b15a-1efd477b315c" />
+      </Groups>
+      <Items>
+        <Item Type="basicLibrary" Name="DEMO_LIB_LINER" GroupId="10baf34d-e33b-497f-b15a-1efd477b315c" />
+        <Item Type="basicLibrary" Name="DOMO_LIB_ROTATE" GroupId="10baf34d-e33b-497f-b15a-1efd477b315c" />
+        <Item Type="basicLibrary" Name="LIB_CONTROL_PROTOCOL" />
+        <Item Type="basic" Name="DIAGNOSTICS" />
+        <Item Type="basic" Name="MAIN" />
+        <Item Type="basic" Name="SIMULATOR" GroupId="e692c7e3-4b20-42fd-81c1-88e2d80c1b86" />
+      </Items>
+    </Project>
+  </Content>
+  <Content Name="Controller">
+    <Controller>
+      <PropertyRepository>
+        <Item id="DigitalIO">
+          <Property Name="Visibility_0_BiDirectional" Value="True" />
+        </Item>
+      </PropertyRepository>
+    </Controller>
+  </Content>
+</Contents>

@@ -1,0 +1,162 @@
+{
+  "Settings": {
+    //"IPAddress": "192.168.0.250",
+    "IPAddress": "127.0.0.1",
+    "Port": 502,
+    "Interval": 1000
+  },
+
+  "RegisterBlocks": {
+    "Measurement": {
+      "StartAddress": 22000,
+      "Count": 100,
+      "Registers": [
+        {
+          "Name": "Liner Axis middle sensor position",
+          "RegType": "Float",
+          "Group": "System",
+          "Offset": 0
+        },
+        {
+          "Name": "Liner Axis base sensor position",
+          "RegType": "Float",
+          "Group": "System",
+          "Offset": 2
+        }
+      ]
+    },
+    "Counters": {
+      "StartAddress": 21000,
+      "Count": 100,
+      "Registers": [
+        {
+          "Name": "Rotate Axis Swing Count",
+          "RegType": "Int32",
+          "Group": "System",
+          "Offset": 0
+        }
+      ]
+    },
+    "Diagnostics": {
+      "StartAddress": 22100,
+      "Count": 100,
+      "Registers": [
+        {
+          "Name": "Liner Motor Speed",
+          "RegType": "Float",
+          "Group": "Diagnostic",
+          "Offset": 0
+        },
+        {
+          "Name": "Liner Motor Position",
+          "RegType": "Float",
+          "Group": "Diagnostic",
+          "Offset": 2
+        },
+        {
+          "Name": "Rotate Motor Speed",
+          "RegType": "Float",
+          "Group": "Diagnostic",
+          "Offset": 4
+        },
+        {
+          "Name": "Rotate Motor Position",
+          "RegType": "Float",
+          "Group": "Diagnostic",
+          "Offset": 6
+        }
+      ]
+    }
+  },
+
+  "Routine": {
+    "Idle": {
+      "index": 0 // don't change
+    },
+    "Axis 0 Home": {
+      "index": 100
+    },
+    "Axis 0 Move to position": {
+      "index": 101,
+      "Parameters": [
+        {
+          "Name": "Speed",
+          "Value": 1.1
+        },
+        {
+          "Name": "Position",
+          "Value": 10
+        }
+      ]
+    },
+    "Axis 0 Move to top": {
+      "index": 102,
+      "Parameters": [
+        {
+          "Name": "Speed",
+          "Value": 2.1
+        }
+      ]
+    },
+    "Axis 0 Move to middle": {
+      "index": 103,
+      "Parameters": [
+        {
+          "Name": "Speed",
+          "Value": 2.1
+        }
+      ]
+    },
+    "Axis 0 Move to base": {
+      "index": 104,
+      "Parameters": [
+        {
+          "Name": "Speed",
+          "Value": 2.1
+        }
+      ]
+    },
+    "Axis 1 Home": {
+      "index": 200
+    },
+    "Axis 1 Move to angle": {
+      "index": 201,
+      "Parameters": [
+        {
+          "Name": "Speed",
+          "Value": 100
+        },
+        {
+          "Name": "Angle",
+          "Value": 180.2
+        }
+      ]
+    },
+    "Axis 1 Swing": {
+      "index": 202,
+      "Parameters": [
+        {
+          "Name": "Speed",
+          "Value": 10.8
+        },
+        {
+          "Name": "Angle 1",
+          "Value": -18.3
+        },
+        {
+          "Name": "Angle 2",
+          "Value": 28.3
+        },
+        {
+          "Name": "Count",
+          "Value": 8
+        }
+      ]
+    }
+  },
+
+  "ErrorCode": {
+    "0": "Success",
+    "999": "Not Implemented"
+  }
+}
