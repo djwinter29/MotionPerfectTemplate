@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Threading;
 using System.ComponentModel;
+using Serilog;
 
 namespace MotionConnector
 {
@@ -26,6 +27,14 @@ namespace MotionConnector
         {
             try
             {
+                Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Console()
+                .WriteTo.File("logfile.log", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
+                Log.Debug("Starting up");
+
                 cfg = JsonConvert.DeserializeObject<ConnectorConfigs>(File.ReadAllText("MotionKits.json"));
 
                 StartModbusPoll();
